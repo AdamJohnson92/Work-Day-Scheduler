@@ -1,3 +1,43 @@
+var saveBtn = $(".saveBtn")
+var taskEl = $(".task")
+var task = taskEl.val()
+var timeBlock = $(".timeblock")
+var savedItemList = [];
+var savedTasksEl = $(".saved-tasks")
+
+function displayTime() {
+    var todayDateTime = $("#currentDay")
+    var today = dayjs().format('MMM DD, YYYY [at] hh:mm:ss a');
+    todayDateTime.text(today);
+  }
+
+var savedItemList = []
+
+function renderSavedTasks(){
+savedItemList = JSON.parse(localStorage.getItem("task"))
+savedTasksEl.text(savedItemList)
+
+}
+
+function handleTaskSave(){
+  var taskEl = $(".task")
+  var task = taskEl.val()
+  savedItemList.push(task)
+  localStorage.setItem("task", JSON.stringify(savedItemList))
+  console.log(savedItemList)
+}
+
+saveBtn.on("click", handleTaskSave)
+saveBtn.on("click", renderSavedTasks)
+
+function setClass(){
+if(dayjs().isAfter(nine)){
+  $(timeblock).addClass(".past")
+}
+}
+displayTime();
+setInterval(displayTime, 1000)
+renderSavedTasks();
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
@@ -20,4 +60,6 @@ $(function () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
+
+  
 });
