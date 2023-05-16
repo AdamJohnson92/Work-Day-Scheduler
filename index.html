@@ -27,6 +27,7 @@
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
+      <button id="clearScheduleBtn">Clear Schedule</button>
     </header>
     <div class="container-lg px-5">
       <!-- Use class for "past", "present", and "future" to apply styles to the
@@ -40,78 +41,86 @@
         -->
 
       <!-- Example of a past time block. The "past" class adds a gray background color. -->
-      <div id="hour-9" class="row time-block">
+      <div id="9" class="row time-block">
         <div class="col-2 col-md-1 hour text-center py-3">9AM</div>
-        <textarea class="col-8 col-md-10 description task" rows="3"> </textarea>
-        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <textarea class="col-5 col-md-15 description task" rows="3" id="task9"> </textarea>
+        <div class=" col-5 col-md-15 saved-tasks" id="saved-tasks9"></div>
+        <button class="btn saveBtn col-2 col-md-1" aria-label="save" id="saveBtn9">
           <i class="fas fa-save" aria-hidden="true"></i>
         </button>
-        <div class="saved-tasks"></div>
+        
       </div>
 
       <!-- Example of a a present time block. The "present" class adds a red background color. -->
-      <div id="hour-10" class="row time-block">
+      <div id="10" class="row time-block">
         <div class="col-2 col-md-1 hour text-center py-3">10AM</div>
-        <textarea class="col-8 col-md-10 description  task" rows="3"> </textarea>
-        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <textarea class="col-5 col-md-15 description task" rows="3" id="task10"> </textarea>
+        <div class=" col-5 col-md-15 saved-tasks" id="saved-tasks10"></div>
+        <button class="btn saveBtn col-2 col-md-1" aria-label="save" id="saveBtn10">
           <i class="fas fa-save" aria-hidden="true"></i>
         </button>
       </div>
 
       <!-- Example of a future time block. The "future" class adds a green background color. -->
-      <div id="hour-11" class="row time-block">
+      <div id="11" class="row time-block">
         <div class="col-2 col-md-1 hour text-center py-3">11AM</div>
-        <textarea class="col-8 col-md-10 description  task" rows="3"> </textarea>
-        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <textarea class="col-5 col-md-15 description task" rows="3" id="task11"> </textarea>
+        <div class=" col-5 col-md-15 saved-tasks" id="saved-tasks11"></div>
+        <button class="btn saveBtn col-2 col-md-1" aria-label="save" id="saveBtn11">
           <i class="fas fa-save" aria-hidden="true"></i>
         </button>
-        <div class="saved-tasks"></div>
       </div>
 
-      <div id="hour-12" class="row time-block">
+      <div id="12" class="row time-block">
         <div class="col-2 col-md-1 hour text-center py-3">12PM</div>
-        <textarea class="col-8 col-md-10 description  task" rows="3"> </textarea>
-        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <textarea class="col-5 col-md-15 description task" rows="3" id="task12"> </textarea>
+        <div class=" col-5 col-md-15 saved-tasks" id="saved-tasks12"></div>
+        <button class="btn saveBtn col-2 col-md-1" aria-label="save" id="saveBtn12">
           <i class="fas fa-save" aria-hidden="true"></i>
         </button>
       </div>
 
-      <div id="hour-1" class="row time-block">
+      <div id="13" class="row time-block">
         <div class="col-2 col-md-1 hour text-center py-3">1PM</div>
-        <textarea class="col-8 col-md-10 description task" rows="3"> </textarea>
-        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <textarea class="col-5 col-md-15 description task" rows="3" id="task13"> </textarea>
+        <div class=" col-5 col-md-15 saved-tasks" id="saved-tasks13"></div>
+        <button class="btn saveBtn col-2 col-md-1" aria-label="save" id="saveBtn13">
           <i class="fas fa-save" aria-hidden="true"></i>
         </button>
       </div>
 
-      <div id="hour-2" class="row time-block">
+      <div id="14" class="row time-block">
         <div class="col-2 col-md-1 hour text-center py-3">2PM</div>
-        <textarea class="col-8 col-md-10 description task" rows="3"> </textarea>
-        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <textarea class="col-5 col-md-15 description task" rows="3" id="task14"> </textarea>
+        <div class=" col-5 col-md-15 saved-tasks" id="saved-tasks14"></div>
+        <button class="btn saveBtn col-2 col-md-1" aria-label="save" id="saveBtn14">
           <i class="fas fa-save" aria-hidden="true"></i>
         </button>
       </div>
 
-      <div id="hour-3" class="row time-block">
+      <div id="15" class="row time-block">
         <div class="col-2 col-md-1 hour text-center py-3">3PM</div>
-        <textarea class="col-8 col-md-10 description task" rows="3"> </textarea>
-        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <textarea class="col-5 col-md-16 description task" rows="3" id="task15"> </textarea>
+        <div class=" col-5 col-md-16 saved-tasks" id="saved-tasks15"></div>
+        <button class="btn saveBtn col-2 col-md-1" aria-label="save" id="saveBtn15">
           <i class="fas fa-save" aria-hidden="true"></i>
         </button>
       </div>
 
-      <div id="hour-4" class="row time-block">
+      <div id="16" class="row time-block">
         <div class="col-2 col-md-1 hour text-center py-3">4PM</div>
-        <textarea class="col-8 col-md-10 description task" rows="3"> </textarea>
-        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <textarea class="col-5 col-md-15 description task" rows="3" id="task16"> </textarea>
+        <div class=" col-5 col-md-15 saved-tasks" id="saved-tasks16"></div>
+        <button class="btn saveBtn col-2 col-md-1" aria-label="save" id="saveBtn16">
           <i class="fas fa-save" aria-hidden="true"></i>
         </button>
       </div>
 
-      <div id="hour-5" class="row time-block">
+      <div id="17" class="row time-block">
         <div class="col-2 col-md-1 hour text-center py-3">5PM</div>
-        <textarea class="col-8 col-md-10 description task" rows="3"> </textarea>
-        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <textarea class="col-5 col-md-15 description task" rows="3" id="task17"> </textarea>
+        <div class=" col-5 col-md-15 saved-tasks" id="saved-tasks17"></div>
+        <button class="btn saveBtn col-2 col-md-1" aria-label="save" id="saveBtn17">
           <i class="fas fa-save" aria-hidden="true"></i>
         </button>
       </div>
