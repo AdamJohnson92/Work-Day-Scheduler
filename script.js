@@ -1,5 +1,4 @@
 var clearScheduleBtn = $("#clearScheduleBtn")
-var saveBtn = $(".saveBtn")
 var saveBtn9 = $("#saveBtn9")
 var saveBtn10 = $("#saveBtn10")
 var saveBtn11 = $("#saveBtn11")
@@ -38,11 +37,54 @@ var savedTasks15El = $("#saved-tasks15")
 var savedTasks16El = $("#saved-tasks16")
 var savedTasks17El = $("#saved-tasks17")
 
+
+var schedulerEl = $("#scheduler")
+var timeBlockArray = [9, 10, 11, 12, 13, 14, 15, 16, 17]
+
 function displayTime() {
     var todayDateTime = $("#currentDay")
     var today = dayjs().format('MMM DD, YYYY [at] hh:mm:ss a');
     todayDateTime.text(today);
   }
+/*<div class="row time-block">
+<div class="col-2 col-md-1 hour text-center py-3">9AM</div>
+<textarea class="col-5 col-md-15 description task" rows="3" id="task9"> </textarea>
+<div class=" col-5 col-md-15 saved-tasks" id="saved-tasks9"></div>
+<button class="btn saveBtn col-2 col-md-1" aria-label="save" id="saveBtn9">
+  <i class="fas fa-save" aria-hidden="true"></i>
+</button>
+
+</div>
+*/
+
+//dry code courtesy of tutor Corrado Alfano
+for (let i = 0; i < timeBlockArray.length; i++) {
+  let mainDiv = $("<div class = 'row time-block'>");
+  let timeDiv = $("<div class='col-2 col-md-1 hour text-center py-3'>")
+  timeDiv.text(timeBlockArray[i]);
+
+  let userMessage = localStorage.getItem(`userSchedule${i}`);
+  let textArea = $("<textarea class='col-5 col-md-15 description task' rows='3'>")
+  textArea.attr("id", `userInput${i}`);
+  textArea.text(userMessage);
+  let button = $("<button class='btn saveBtn col-2 col-md-1' aria-label='save'>")
+
+  //conditional statement
+
+  mainDiv.append(timeDiv, textArea, button)
+
+  schedulerEl.append(mainDiv) 
+}
+
+
+
+$(".saveBtn").on("click",() => {
+  for (let x = 0; x < timeBlockArray.length; x++) {
+    let textAreaValue = $(`#userInput${x}`).val();
+    localStorage.setItem(`userSchedule${x}`,textAreaValue)
+    
+  }
+})
 
 //9--------------------------------------------------------------
 function handleTaskSave9(){
