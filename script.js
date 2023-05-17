@@ -1,8 +1,8 @@
 var clearScheduleBtn = $("#clearScheduleBtn")
 var timeBlock = $(".timeblock")
 var schedulerEl = $("#scheduler")
-var timeBlockArray = ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00"]
-
+var timeBlockArray = [9, 10, 11, 12, 13, 14, 15, 16, 17]
+//PASTED PLACEHOLDER["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00"]
 function displayTime() {
     var todayDateTime = $("#currentDay")
     var today = dayjs().format('MMM DD, YYYY [at] HH:mm:ss a');
@@ -31,15 +31,24 @@ for (let i = 0; i < timeBlockArray.length; i++) {
   let button = $("<button class='btn saveBtn col-2 col-md-1' aria-label='save'>")
   button.text("Save")
 
-  //conditional statement
-  if (dayjs().isBefore("timeBlockArray[i]", "HH")) {
+  //Lavina Castillo
+  let currentHour = dayjs().format("HH");
+
+if (currentHour > timeBlockArray[i]) {
+  textArea.attr("class", "past col-10 col-md-15 description task")
+} else if (currentHour == timeBlockArray[i]){
+  textArea.attr("class", "present col-10 col-md-15 description task")
+} else {textArea.attr("class", "future col-10 col-md-15 description task")}
+
+  /*conditional statement
+  if (dayjs().isBefore(timeBlockArray[i], "HH")) {
     textArea.attr("class", "future")
   } else if (dayjs().isSame("timeBlockArray[i]", "HH")){
     textArea.attr("class", "present")
   } else {
     textArea.attr("class", "past col-10 col-md-15 description task")
   }
-
+console.log(this)*/
 
   mainDiv.append(timeDiv, textArea, button)
 
