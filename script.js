@@ -1,11 +1,11 @@
 var clearScheduleBtn = $("#clearScheduleBtn")
 var timeBlock = $(".timeblock")
 var schedulerEl = $("#scheduler")
-var timeBlockArray = [9, 10, 11, 12, 13, 14, 15, 16, 17]
+var timeBlockArray = ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00"]
 
 function displayTime() {
     var todayDateTime = $("#currentDay")
-    var today = dayjs().format('MMM DD, YYYY [at] hh:mm:ss a');
+    var today = dayjs().format('MMM DD, YYYY [at] HH:mm:ss a');
     todayDateTime.text(today);
   }
 /*<div class="row time-block">
@@ -25,18 +25,26 @@ for (let i = 0; i < timeBlockArray.length; i++) {
   timeDiv.text(timeBlockArray[i]);
 
   let userMessage = localStorage.getItem(`userSchedule${i}`);
-  let textArea = $("<textarea class='col-10 col-md-15 description task' rows='3'>")
+  let textArea = $("<textarea class='col-10 col-md-15 description task'>")
   textArea.attr("id", `userInput${i}`);
   textArea.text(userMessage);
   let button = $("<button class='btn saveBtn col-2 col-md-1' aria-label='save'>")
   button.text("Save")
 
   //conditional statement
+  if (dayjs().isBefore("timeBlockArray[i]", "HH")) {
+    textArea.attr("class", "future")
+  } else if (dayjs().isSame("timeBlockArray[i]", "HH")){
+    textArea.attr("class", "present")
+  } else {
+    textArea.attr("class", "past col-10 col-md-15 description task")
+  }
+
 
   mainDiv.append(timeDiv, textArea, button)
 
   schedulerEl.append(mainDiv) 
-}git
+}
 
 $(".saveBtn").on("click", function() {
   for (let x = 0; x < timeBlockArray.length; x++) {
