@@ -36,7 +36,7 @@ for (let i = 0; i < timeBlockArray.length; i++) {
   mainDiv.append(timeDiv, textArea, button)
 
   schedulerEl.append(mainDiv) 
-}
+}git
 
 $(".saveBtn").on("click", function() {
   for (let x = 0; x < timeBlockArray.length; x++) {
