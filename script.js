@@ -22,9 +22,9 @@ function displayTime() {
 for (let i = 0; i < timeBlockArray.length; i++) {
   let mainDiv = $("<div class = 'row time-block'>");
   let timeDiv = $("<div class='col-2 col-md-1 hour text-center py-3'>")
-  timeDiv.text(timeBlockArray[i]);
-  let timeDisplay = $("<div>")
-  timeDisplay.text(`${timeBlockArray[i]}:00`)
+  timeDiv.text(timeBlockArray[i] + ":00");
+  
+ 
 
   let userMessage = localStorage.getItem(`userSchedule${i}`);
   let textArea = $("<textarea class='col-10 col-md-15 description task'>")
@@ -51,8 +51,6 @@ if (currentHour > timeBlockArray[i]) {
 //     textArea.attr("class", "past col-10 col-md-15 description task")
 //   }
 // console.log(this)
-
-  timeDiv.append(timeDisplay)
 
   mainDiv.append(timeDiv, textArea, button)
 
