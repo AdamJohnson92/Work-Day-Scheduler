@@ -22,7 +22,7 @@ for (let i = 0; i < timeBlockArray.length; i++) {
   let button = $("<button class='btn saveBtn col-2 col-md-1' aria-label='save'>")
   button.text("Save")
 
-  //Lavina Castillo
+  //variable assistance courtesty of classmate Lavina Castillo
   let currentHour = dayjs().format("HH");
 
 if (currentHour > timeBlockArray[i]) {
