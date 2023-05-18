@@ -26,10 +26,10 @@ for (let i = 0; i < timeBlockArray.length; i++) {
   let currentHour = dayjs().format("HH");
 
 if (currentHour > timeBlockArray[i]) {
-  textArea.attr("class", "past col-10 col-sm-10 col-md-12 col-lg-10 description task")
+  textArea.attr("class", "past col-12 col-sm-12 col-md-12 col-lg-10 description task")
 } else if (currentHour == timeBlockArray[i]){
-  textArea.attr("class", "present col-10 col-sm-10 col-md-12 col-lg-10 description task")
-} else {textArea.attr("class", "future col-10 col-sm-10 col-md-12 col-lg-10 description task")}
+  textArea.attr("class", "present col-12 col-sm-12 col-md-12 col-lg-10 description task")
+} else {textArea.attr("class", "future col-12 col-sm-12 col-md-12 col-lg-10 description task")}
 
   mainDiv.append(timeDiv, textArea, button)
 
