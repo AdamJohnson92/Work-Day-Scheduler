@@ -38,7 +38,7 @@ for (let i = 0; i < timeBlockArray.length; i++) {
 
 if (currentHour > timeBlockArray[i]) {
   textArea.attr("class", "past col-10 col-md-15 description task")
-} else if (currentHour === timeBlockArray[i]){
+} else if (currentHour == timeBlockArray[i]){
   textArea.attr("class", "present col-10 col-md-15 description task")
 } else {textArea.attr("class", "future col-10 col-md-15 description task")}
 
