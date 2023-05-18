@@ -60,3 +60,27 @@ textarea {
   transition: all 0.3s ease-in-out;
   font-weight: bold;
 }
+
+@media screen and (max-width: 540px) {
+  .container-lg{
+  font-size: 10px;
+  }
+  .saveBtn{
+    font-size: 10px;
+    padding:0px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .task{
+    
+    border-radius: 0 14px 0 0;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .saveBtn{
+    width: 100vw;
+    border-radius: 0 0 14px 14px;
+  }
+}

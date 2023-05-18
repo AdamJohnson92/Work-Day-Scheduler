@@ -16,20 +16,20 @@ for (let i = 0; i < timeBlockArray.length; i++) {
  
 
   let userMessage = localStorage.getItem(`userSchedule${i}`);
-  let textArea = $("<textarea class='col-10 col-md-15 description task'>")
+  let textArea = $("<textarea class='col-10 col-md-15 col-sm-8 description task'>")
   textArea.attr("id", `userInput${i}`);
   textArea.text(userMessage);
-  let button = $("<button class='btn saveBtn col-2 col-md-1' aria-label='save'>")
+  let button = $("<button class='btn saveBtn col-1 col-md-1' aria-label='save'>")
   button.text("Save")
 
   //variable assistance courtesty of classmate Lavina Castillo
   let currentHour = dayjs().format("HH");
 
 if (currentHour > timeBlockArray[i]) {
-  textArea.attr("class", "past col-10 col-md-15 description task")
+  textArea.attr("class", "past col-10 col-sm-10 col-md-12 col-lg-10 description task")
 } else if (currentHour == timeBlockArray[i]){
-  textArea.attr("class", "present col-10 col-md-15 description task")
-} else {textArea.attr("class", "future col-10 col-md-15 description task")}
+  textArea.attr("class", "present col-10 col-sm-10 col-md-12 col-lg-10 description task")
+} else {textArea.attr("class", "future col-10 col-sm-10 col-md-12 col-lg-10 description task")}
 
   mainDiv.append(timeDiv, textArea, button)
 
