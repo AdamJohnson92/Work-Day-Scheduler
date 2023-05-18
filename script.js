@@ -2,6 +2,7 @@ var clearScheduleBtn = $("#clearScheduleBtn")
 var timeBlock = $(".timeblock")
 var schedulerEl = $("#scheduler")
 var timeBlockArray = [9, 10, 11, 12, 13, 14, 15, 16, 17]
+
 function displayTime() {
     var todayDateTime = $("#currentDay")
     var today = dayjs().format('MMM DD, YYYY [at] HH:mm:ss a');
@@ -12,8 +13,6 @@ for (let i = 0; i < timeBlockArray.length; i++) {
   let mainDiv = $("<div class = 'row time-block'>");
   let timeDiv = $("<div class='col-2 col-md-1 hour text-center py-3'>")
   timeDiv.text(timeBlockArray[i] + ":00");
-  
- 
 
   let userMessage = localStorage.getItem(`userSchedule${i}`);
   let textArea = $("<textarea class='col-10 col-md-15 col-sm-8 description task'>")
@@ -25,11 +24,11 @@ for (let i = 0; i < timeBlockArray.length; i++) {
   //variable assistance courtesty of classmate Lavina Castillo
   let currentHour = dayjs().format("HH");
 
-if (currentHour > timeBlockArray[i]) {
-  textArea.attr("class", "past col-12 col-sm-12 col-md-12 col-lg-10 description task")
-} else if (currentHour == timeBlockArray[i]){
-  textArea.attr("class", "present col-12 col-sm-12 col-md-12 col-lg-10 description task")
-} else {textArea.attr("class", "future col-12 col-sm-12 col-md-12 col-lg-10 description task")}
+  if (currentHour > timeBlockArray[i]) {
+    textArea.attr("class", "past col-12 col-sm-12 col-md-12 col-lg-10 description task")
+  } else if (currentHour == timeBlockArray[i]){
+    textArea.attr("class", "present col-12 col-sm-12 col-md-12 col-lg-10 description task")
+  } else {textArea.attr("class", "future col-12 col-sm-12 col-md-12 col-lg-10 description task")}
 
   mainDiv.append(timeDiv, textArea, button)
 
