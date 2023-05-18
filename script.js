@@ -23,6 +23,8 @@ for (let i = 0; i < timeBlockArray.length; i++) {
   let mainDiv = $("<div class = 'row time-block'>");
   let timeDiv = $("<div class='col-2 col-md-1 hour text-center py-3'>")
   timeDiv.text(timeBlockArray[i]);
+  let timeDisplay = $("<div>")
+  timeDisplay.text(`${timeBlockArray[i]}:00`)
 
   let userMessage = localStorage.getItem(`userSchedule${i}`);
   let textArea = $("<textarea class='col-10 col-md-15 description task'>")
@@ -36,19 +38,21 @@ for (let i = 0; i < timeBlockArray.length; i++) {
 
 if (currentHour > timeBlockArray[i]) {
   textArea.attr("class", "past col-10 col-md-15 description task")
-} else if (currentHour == timeBlockArray[i]){
+} else if (currentHour === timeBlockArray[i]){
   textArea.attr("class", "present col-10 col-md-15 description task")
 } else {textArea.attr("class", "future col-10 col-md-15 description task")}
 
-  /*conditional statement
-  if (dayjs().isBefore(timeBlockArray[i], "HH")) {
-    textArea.attr("class", "future")
-  } else if (dayjs().isSame("timeBlockArray[i]", "HH")){
-    textArea.attr("class", "present")
-  } else {
-    textArea.attr("class", "past col-10 col-md-15 description task")
-  }
-console.log(this)*/
+//   conditional statement
+//   if (dayjs().isBefore(timeBlockArray[i], "hour")) {
+//     textArea.attr("class", "future")
+//   } else if (dayjs().isSame(timeBlockArray[i], "hour")){
+//     textArea.attr("class", "present")
+//   } else {
+//     textArea.attr("class", "past col-10 col-md-15 description task")
+//   }
+// console.log(this)
+
+  timeDiv.append(timeDisplay)
 
   mainDiv.append(timeDiv, textArea, button)
 
