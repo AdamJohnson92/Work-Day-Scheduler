@@ -18,7 +18,7 @@ When users load the application, they will see 9 rows, each representing an hour
 
 ## Credits
 
-Starter code with HTML and preloaded JQuery, Bootstrap, and DayJS, courtesy of Bootcamp Spot. Assistance with code provided by BCS tutor Corrado Alfano regarding the for loop that dynamically generated the scheduler elements including the pull from local storage. Additional assistance courtesy of classmate Lavina Castillo regarding the set up of the conditional statement to check the current time against the time block in setting the currentHour variable to represent the dayjs value. 
+Starter code with HTML and preloaded JQuery, Bootstrap, and DayJS, courtesy of Bootcamp Spot. Assistance with code provided by BCS tutor Corrado Alfano regarding the for loop that dynamically generated the scheduler elements including setItem and getItem regarding local storage. Additional assistance courtesy of classmate Lavina Castillo regarding the set up of the conditional statement to check the current time against the time block in setting the currentHour variable to represent the dayjs value. 
 
 ## License
 
